@@ -1,0 +1,143 @@
+make[1]: se entra en el directorio '/home/alserranog/Documentos/Uni/minikernel/boot'
+make[1]: se sale del directorio '/home/alserranog/Documentos/Uni/minikernel/boot'
+cd minikernel; make
+make[1]: se entra en el directorio '/home/alserranog/Documentos/Uni/minikernel/minikernel'
+gcc -g -Wall -fPIC -Iinclude   -c -o kernel.o kernel.c
+kernel.c:80:13: warning: ‘eliminar_elem’ defined but not used [-Wunused-function]
+ static void eliminar_elem(lista_BCPs *lista, BCP * proc){
+             ^
+gcc -shared -o kernel kernel.o HAL.o  -ldl
+make[1]: se sale del directorio '/home/alserranog/Documentos/Uni/minikernel/minikernel'
+cd usuario; make
+make[1]: se entra en el directorio '/home/alserranog/Documentos/Uni/minikernel/usuario'
+cd lib; make
+make[2]: se entra en el directorio '/home/alserranog/Documentos/Uni/minikernel/usuario/lib'
+gcc -Wall -g -fPIC -I../include -I../../minikernel/include   -c -o serv.o serv.c
+ar -r libserv.a serv.o misc.o
+ar: creando libserv.a
+make[2]: se sale del directorio '/home/alserranog/Documentos/Uni/minikernel/usuario/lib'
+cc -Wall -fPIC -Werror -g -Iinclude   -c -o init.o init.c
+cc -shared -o init init.o -Llib -lserv
+cc -Wall -fPIC -Werror -g -Iinclude   -c -o excep_arit.o excep_arit.c
+cc -shared -o excep_arit excep_arit.o -Llib  -lserv 
+cc -Wall -fPIC -Werror -g -Iinclude   -c -o excep_mem.o excep_mem.c
+cc -shared -o excep_mem excep_mem.o -Llib -lserv 
+cc -Wall -fPIC -Werror -g -Iinclude   -c -o simplon.o simplon.c
+cc -shared -o simplon simplon.o -Llib -lserv 
+cc -Wall -fPIC -Werror -g -Iinclude   -c -o prueba_dormir.o prueba_dormir.c
+cc  -shared -o prueba_dormir prueba_dormir.o -Llib -lserv
+cc -Wall -fPIC -Werror -g -Iinclude   -c -o dormilon.o dormilon.c
+cc  -shared -o dormilon dormilon.o -Llib -lserv
+cc -Wall -fPIC -Werror -g -Iinclude   -c -o prueba_mutex1.o prueba_mutex1.c
+cc  -shared -o prueba_mutex1 prueba_mutex1.o -Llib -lserv
+cc -Wall -fPIC -Werror -g -Iinclude   -c -o creador1.o creador1.c
+creador1.c: In function ‘main’:
+creador1.c:20:24: error: ‘NO_RECURSIVO’ undeclared (first use in this function)
+  if (crear_mutex("m1", NO_RECURSIVO)<0)
+                        ^
+creador1.c:20:24: note: each undeclared identifier is reported only once for each function it appears in
+<integrado>: fallo en las instrucciones para el objetivo 'creador1.o'
+make[1]: *** [creador1.o] Error 1
+cc -Wall -fPIC -Werror -g -Iinclude   -c -o creador2.o creador2.c
+creador2.c: In function ‘main’:
+creador2.c:20:24: error: ‘NO_RECURSIVO’ undeclared (first use in this function)
+  if (crear_mutex("m5", NO_RECURSIVO)<0)
+                        ^
+creador2.c:20:24: note: each undeclared identifier is reported only once for each function it appears in
+<integrado>: fallo en las instrucciones para el objetivo 'creador2.o'
+make[1]: *** [creador2.o] Error 1
+cc -Wall -fPIC -Werror -g -Iinclude   -c -o creador3.o creador3.c
+creador3.c: In function ‘main’:
+creador3.c:20:24: error: ‘NO_RECURSIVO’ undeclared (first use in this function)
+  if (crear_mutex("m9", NO_RECURSIVO)<0)
+                        ^
+creador3.c:20:24: note: each undeclared identifier is reported only once for each function it appears in
+<integrado>: fallo en las instrucciones para el objetivo 'creador3.o'
+make[1]: *** [creador3.o] Error 1
+cc -Wall -fPIC -Werror -g -Iinclude   -c -o creador4.o creador4.c
+creador4.c: In function ‘main’:
+creador4.c:20:25: error: ‘NO_RECURSIVO’ undeclared (first use in this function)
+  if (crear_mutex("m13", NO_RECURSIVO)<0)
+                         ^
+creador4.c:20:25: note: each undeclared identifier is reported only once for each function it appears in
+<integrado>: fallo en las instrucciones para el objetivo 'creador4.o'
+make[1]: *** [creador4.o] Error 1
+cc -Wall -fPIC -Werror -g -Iinclude   -c -o abridor.o abridor.c
+abridor.c: In function ‘main’:
+abridor.c:23:6: error: implicit declaration of function ‘abrir_mutex’ [-Werror=implicit-function-declaration]
+  if (abrir_mutex("m0")<0)
+      ^
+abridor.c:43:2: error: implicit declaration of function ‘cerrar_mutex’ [-Werror=implicit-function-declaration]
+  cerrar_mutex(desc);
+  ^
+cc1: all warnings being treated as errors
+<integrado>: fallo en las instrucciones para el objetivo 'abridor.o'
+make[1]: *** [abridor.o] Error 1
+cc -Wall -fPIC -Werror -g -Iinclude   -c -o prueba_mutex2.o prueba_mutex2.c
+prueba_mutex2.c: In function ‘main’:
+prueba_mutex2.c:22:31: error: ‘NO_RECURSIVO’ undeclared (first use in this function)
+  if ((desc1=crear_mutex("m1", NO_RECURSIVO))<0)
+                               ^
+prueba_mutex2.c:22:31: note: each undeclared identifier is reported only once for each function it appears in
+prueba_mutex2.c:26:6: error: implicit declaration of function ‘lock’ [-Werror=implicit-function-declaration]
+  if (lock(desc1+1)<0)
+      ^
+prueba_mutex2.c:29:31: error: ‘RECURSIVO’ undeclared (first use in this function)
+  if ((desc2=crear_mutex("m2", RECURSIVO))<0)
+                               ^
+prueba_mutex2.c:56:6: error: implicit declaration of function ‘unlock’ [-Werror=implicit-function-declaration]
+  if (unlock(desc2)<0)
+      ^
+cc1: all warnings being treated as errors
+<integrado>: fallo en las instrucciones para el objetivo 'prueba_mutex2.o'
+make[1]: *** [prueba_mutex2.o] Error 1
+cc -Wall -fPIC -Werror -g -Iinclude   -c -o mutex1.o mutex1.c
+mutex1.c: In function ‘main’:
+mutex1.c:22:12: error: implicit declaration of function ‘abrir_mutex’ [-Werror=implicit-function-declaration]
+  if ((desc=abrir_mutex("m2"))<0)
+            ^
+mutex1.c:25:6: error: implicit declaration of function ‘lock’ [-Werror=implicit-function-declaration]
+  if (lock(desc)<0)
+      ^
+mutex1.c:36:6: error: implicit declaration of function ‘cerrar_mutex’ [-Werror=implicit-function-declaration]
+  if (cerrar_mutex(desc)<0)
+      ^
+cc1: all warnings being treated as errors
+<integrado>: fallo en las instrucciones para el objetivo 'mutex1.o'
+make[1]: *** [mutex1.o] Error 1
+cc -Wall -fPIC -Werror -g -Iinclude   -c -o mutex2.o mutex2.c
+mutex2.c: In function ‘main’:
+mutex2.c:22:13: error: implicit declaration of function ‘abrir_mutex’ [-Werror=implicit-function-declaration]
+  if ((desc1=abrir_mutex("m1"))<0)
+             ^
+mutex2.c:28:6: error: implicit declaration of function ‘lock’ [-Werror=implicit-function-declaration]
+  if (lock(desc1)<0)
+      ^
+mutex2.c:39:6: error: implicit declaration of function ‘unlock’ [-Werror=implicit-function-declaration]
+  if (unlock(desc2)<0)
+      ^
+cc1: all warnings being treated as errors
+<integrado>: fallo en las instrucciones para el objetivo 'mutex2.o'
+make[1]: *** [mutex2.o] Error 1
+cc -Wall -fPIC -Werror -g -Iinclude   -c -o prueba_RR1.o prueba_RR1.c
+cc  -shared -o prueba_RR1 prueba_RR1.o -Llib -lserv
+cc -Wall -fPIC -Werror -g -Iinclude   -c -o yosoy.o yosoy.c
+cc  -shared -o yosoy yosoy.o -Llib -lserv
+cc -Wall -fPIC -Werror -g -Iinclude   -c -o prueba_RR2.o prueba_RR2.c
+cc  -shared -o prueba_RR2 prueba_RR2.o -Llib -lserv
+cc -Wall -fPIC -Werror -g -Iinclude   -c -o mudo.o mudo.c
+cc  -shared -o mudo mudo.o -Llib -lserv
+cc -Wall -fPIC -Werror -g -Iinclude   -c -o prueba_term.o prueba_term.c
+cc  -shared -o prueba_term prueba_term.o -Llib -lserv
+cc -Wall -fPIC -Werror -g -Iinclude   -c -o lector.o lector.c
+lector.c: In function ‘main’:
+lector.c:23:6: error: implicit declaration of function ‘leer_caracter’ [-Werror=implicit-function-declaration]
+  car=leer_caracter();
+      ^
+cc1: all warnings being treated as errors
+<integrado>: fallo en las instrucciones para el objetivo 'lector.o'
+make[1]: *** [lector.o] Error 1
+make[1]: Debido a los errores, el objetivo 'all' no se reconstruyó.
+make[1]: se sale del directorio '/home/alserranog/Documentos/Uni/minikernel/usuario'
+Makefile:14: fallo en las instrucciones para el objetivo 'programas'
+make: *** [programas] Error 2

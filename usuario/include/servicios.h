@@ -1,0 +1,49 @@
+/*
+ *  usuario/include/servicios.h
+ *
+ *  Minikernel. Versi�n 1.0
+ *
+ *  Fernando P�rez Costoya
+ *
+ */
+
+/*
+ *
+ * Fichero de cabecera que contiene los prototipos de funciones de
+ * biblioteca que proporcionan la interfaz de llamadas al sistema.
+ *
+ *      SE DEBE MODIFICAR AL INCLUIR NUEVAS LLAMADAS
+ *
+ */
+
+#ifndef SERVICIOS_H
+#define SERVICIOS_H
+
+/*TEMPORALES*/
+
+#define NO_RECURSIVO 0
+#define RECURSIVO 1
+/* Evita el uso del printf de la bilioteca est�ndar */
+#define printf escribirf
+
+/* Funcion de biblioteca */
+int escribirf(const char *formato, ...);
+
+/* Llamadas al sistema proporcionadas */
+int crear_proceso(char *prog);
+int terminar_proceso();
+int escribir(char *texto, unsigned int longi);
+int obtener_id_pr();
+int dormir(unsigned int segs);
+
+/*TEMPORALES*/
+
+int crear_mutex();
+int abrir_mutex();
+int cerrar_mutex();
+int lock();
+int unlock();
+int leer_caracter();
+
+#endif /* SERVICIOS_H */
+
