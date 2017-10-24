@@ -32,6 +32,44 @@
         <in>yosoy.c</in>
       </df>
     </df>
+    <logicalFolder name="minikernel"
+                   displayName="minikernel"
+                   projectFiles="true"
+                   root="../../Documentos/Uni/minikernel">
+      <logicalFolder name="minikernel" displayName="minikernel" projectFiles="true">
+        <logicalFolder name="include" displayName="include" projectFiles="true">
+          <itemPath>../../Documentos/Uni/minikernel/minikernel/include/HAL.h</itemPath>
+          <itemPath>../../Documentos/Uni/minikernel/minikernel/include/kernel.h</itemPath>
+        </logicalFolder>
+        <itemPath>../../Documentos/Uni/minikernel/minikernel/kernel.c</itemPath>
+      </logicalFolder>
+      <logicalFolder name="usuario" displayName="usuario" projectFiles="true">
+        <logicalFolder name="lib" displayName="lib" projectFiles="true">
+          <itemPath>../../Documentos/Uni/minikernel/usuario/lib/serv.c</itemPath>
+        </logicalFolder>
+        <itemPath>../../Documentos/Uni/minikernel/usuario/abridor.c</itemPath>
+        <itemPath>../../Documentos/Uni/minikernel/usuario/creador1.c</itemPath>
+        <itemPath>../../Documentos/Uni/minikernel/usuario/creador2.c</itemPath>
+        <itemPath>../../Documentos/Uni/minikernel/usuario/creador3.c</itemPath>
+        <itemPath>../../Documentos/Uni/minikernel/usuario/creador4.c</itemPath>
+        <itemPath>../../Documentos/Uni/minikernel/usuario/dormilon.c</itemPath>
+        <itemPath>../../Documentos/Uni/minikernel/usuario/excep_arit.c</itemPath>
+        <itemPath>../../Documentos/Uni/minikernel/usuario/excep_mem.c</itemPath>
+        <itemPath>../../Documentos/Uni/minikernel/usuario/init.c</itemPath>
+        <itemPath>../../Documentos/Uni/minikernel/usuario/lector.c</itemPath>
+        <itemPath>../../Documentos/Uni/minikernel/usuario/mudo.c</itemPath>
+        <itemPath>../../Documentos/Uni/minikernel/usuario/mutex1.c</itemPath>
+        <itemPath>../../Documentos/Uni/minikernel/usuario/mutex2.c</itemPath>
+        <itemPath>../../Documentos/Uni/minikernel/usuario/prueba_RR1.c</itemPath>
+        <itemPath>../../Documentos/Uni/minikernel/usuario/prueba_RR2.c</itemPath>
+        <itemPath>../../Documentos/Uni/minikernel/usuario/prueba_dormir.c</itemPath>
+        <itemPath>../../Documentos/Uni/minikernel/usuario/prueba_mutex1.c</itemPath>
+        <itemPath>../../Documentos/Uni/minikernel/usuario/prueba_mutex2.c</itemPath>
+        <itemPath>../../Documentos/Uni/minikernel/usuario/prueba_term.c</itemPath>
+        <itemPath>../../Documentos/Uni/minikernel/usuario/simplon.c</itemPath>
+        <itemPath>../../Documentos/Uni/minikernel/usuario/yosoy.c</itemPath>
+      </logicalFolder>
+    </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
                    projectFiles="false"
@@ -53,7 +91,9 @@
         <rebuildPropChanged>false</rebuildPropChanged>
       </toolsSet>
       <flagsDictionary>
-        <element flagsID="0"
+        <element flagsID="0" commonFlags="-fPIC -g"/>
+        <element flagsID="1" commonFlags="-g -fPIC"/>
+        <element flagsID="2"
                  commonFlags="-mtune=generic -march=x86-64 -g -fPIC -fstack-protector-strong"/>
       </flagsDictionary>
       <codeAssistance>
@@ -70,115 +110,354 @@
           <preBuildCommand></preBuildCommand>
         </preBuild>
       </makefileType>
+      <item path="../../Documentos/Uni/minikernel/minikernel/kernel.c"
+            ex="false"
+            tool="0"
+            flavor2="3">
+        <cTool flags="2">
+        </cTool>
+      </item>
+      <item path="../../Documentos/Uni/minikernel/usuario/abridor.c"
+            ex="false"
+            tool="0"
+            flavor2="3">
+        <cTool flags="2">
+          <incDir>
+            <pElem>../../Documentos/Uni/minikernel/usuario</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="../../Documentos/Uni/minikernel/usuario/creador1.c"
+            ex="false"
+            tool="0"
+            flavor2="3">
+        <cTool flags="2">
+          <incDir>
+            <pElem>../../Documentos/Uni/minikernel/usuario</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="../../Documentos/Uni/minikernel/usuario/creador2.c"
+            ex="false"
+            tool="0"
+            flavor2="3">
+        <cTool flags="2">
+          <incDir>
+            <pElem>../../Documentos/Uni/minikernel/usuario</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="../../Documentos/Uni/minikernel/usuario/creador3.c"
+            ex="false"
+            tool="0"
+            flavor2="3">
+        <cTool flags="2">
+          <incDir>
+            <pElem>../../Documentos/Uni/minikernel/usuario</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="../../Documentos/Uni/minikernel/usuario/creador4.c"
+            ex="false"
+            tool="0"
+            flavor2="3">
+        <cTool flags="2">
+          <incDir>
+            <pElem>../../Documentos/Uni/minikernel/usuario</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="../../Documentos/Uni/minikernel/usuario/dormilon.c"
+            ex="false"
+            tool="0"
+            flavor2="3">
+        <cTool flags="2">
+          <incDir>
+            <pElem>../../Documentos/Uni/minikernel/usuario</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="../../Documentos/Uni/minikernel/usuario/excep_arit.c"
+            ex="false"
+            tool="0"
+            flavor2="3">
+        <cTool flags="2">
+          <incDir>
+            <pElem>../../Documentos/Uni/minikernel/usuario</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="../../Documentos/Uni/minikernel/usuario/excep_mem.c"
+            ex="false"
+            tool="0"
+            flavor2="3">
+        <cTool flags="2">
+          <incDir>
+            <pElem>../../Documentos/Uni/minikernel/usuario</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="../../Documentos/Uni/minikernel/usuario/init.c"
+            ex="false"
+            tool="0"
+            flavor2="3">
+        <cTool flags="2">
+          <incDir>
+            <pElem>../../Documentos/Uni/minikernel/usuario</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="../../Documentos/Uni/minikernel/usuario/lector.c"
+            ex="false"
+            tool="0"
+            flavor2="3">
+        <cTool flags="2">
+          <incDir>
+            <pElem>../../Documentos/Uni/minikernel/usuario</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="../../Documentos/Uni/minikernel/usuario/lib/serv.c"
+            ex="false"
+            tool="0"
+            flavor2="3">
+        <cTool flags="2">
+        </cTool>
+      </item>
+      <item path="../../Documentos/Uni/minikernel/usuario/mudo.c"
+            ex="false"
+            tool="0"
+            flavor2="3">
+        <cTool flags="2">
+          <incDir>
+            <pElem>../../Documentos/Uni/minikernel/usuario</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="../../Documentos/Uni/minikernel/usuario/mutex1.c"
+            ex="false"
+            tool="0"
+            flavor2="3">
+        <cTool flags="2">
+          <incDir>
+            <pElem>../../Documentos/Uni/minikernel/usuario</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="../../Documentos/Uni/minikernel/usuario/mutex2.c"
+            ex="false"
+            tool="0"
+            flavor2="3">
+        <cTool flags="2">
+          <incDir>
+            <pElem>../../Documentos/Uni/minikernel/usuario</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="../../Documentos/Uni/minikernel/usuario/prueba_RR1.c"
+            ex="false"
+            tool="0"
+            flavor2="3">
+        <cTool flags="2">
+          <incDir>
+            <pElem>../../Documentos/Uni/minikernel/usuario</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="../../Documentos/Uni/minikernel/usuario/prueba_RR2.c"
+            ex="false"
+            tool="0"
+            flavor2="3">
+        <cTool flags="2">
+          <incDir>
+            <pElem>../../Documentos/Uni/minikernel/usuario</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="../../Documentos/Uni/minikernel/usuario/prueba_dormir.c"
+            ex="false"
+            tool="0"
+            flavor2="3">
+        <cTool flags="2">
+          <incDir>
+            <pElem>../../Documentos/Uni/minikernel/usuario</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="../../Documentos/Uni/minikernel/usuario/prueba_mutex1.c"
+            ex="false"
+            tool="0"
+            flavor2="3">
+        <cTool flags="2">
+          <incDir>
+            <pElem>../../Documentos/Uni/minikernel/usuario</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="../../Documentos/Uni/minikernel/usuario/prueba_mutex2.c"
+            ex="false"
+            tool="0"
+            flavor2="3">
+        <cTool flags="2">
+          <incDir>
+            <pElem>../../Documentos/Uni/minikernel/usuario</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="../../Documentos/Uni/minikernel/usuario/prueba_term.c"
+            ex="false"
+            tool="0"
+            flavor2="3">
+        <cTool flags="2">
+          <incDir>
+            <pElem>../../Documentos/Uni/minikernel/usuario</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="../../Documentos/Uni/minikernel/usuario/simplon.c"
+            ex="false"
+            tool="0"
+            flavor2="3">
+        <cTool flags="2">
+          <incDir>
+            <pElem>../../Documentos/Uni/minikernel/usuario</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="../../Documentos/Uni/minikernel/usuario/yosoy.c"
+            ex="false"
+            tool="0"
+            flavor2="3">
+        <cTool flags="2">
+          <incDir>
+            <pElem>../../Documentos/Uni/minikernel/usuario</pElem>
+          </incDir>
+        </cTool>
+      </item>
       <folder path="0/minikernel">
         <cTool>
           <incDir>
             <pElem>minikernel/include</pElem>
-            <pElem>minikernel</pElem>
           </incDir>
         </cTool>
       </folder>
       <folder path="0/usuario/lib">
         <cTool>
           <incDir>
-            <pElem>usuario/lib</pElem>
+            <pElem>usuario/include</pElem>
+            <pElem>minikernel/include</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="minikernel/minikernel">
+        <cTool>
+          <incDir>
+            <pElem>../../Documentos/Uni/minikernel/minikernel/include</pElem>
+            <pElem>../../Documentos/Uni/minikernel/minikernel</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="minikernel/usuario/lib">
+        <cTool>
+          <incDir>
+            <pElem>../../Documentos/Uni/minikernel/usuario/lib</pElem>
           </incDir>
         </cTool>
       </folder>
       <item path="minikernel/kernel.c" ex="false" tool="0" flavor2="3">
-        <cTool flags="0">
+        <cTool flags="1">
         </cTool>
       </item>
       <item path="usuario/abridor.c" ex="false" tool="0" flavor2="3">
         <cTool flags="0">
           <incDir>
-            <pElem>usuario</pElem>
+            <pElem>usuario/include</pElem>
           </incDir>
         </cTool>
       </item>
       <item path="usuario/creador1.c" ex="false" tool="0" flavor2="3">
         <cTool flags="0">
           <incDir>
-            <pElem>usuario</pElem>
+            <pElem>usuario/include</pElem>
           </incDir>
         </cTool>
       </item>
       <item path="usuario/creador2.c" ex="false" tool="0" flavor2="3">
         <cTool flags="0">
           <incDir>
-            <pElem>usuario</pElem>
+            <pElem>usuario/include</pElem>
           </incDir>
         </cTool>
       </item>
       <item path="usuario/creador3.c" ex="false" tool="0" flavor2="3">
         <cTool flags="0">
           <incDir>
-            <pElem>usuario</pElem>
+            <pElem>usuario/include</pElem>
           </incDir>
         </cTool>
       </item>
       <item path="usuario/creador4.c" ex="false" tool="0" flavor2="3">
         <cTool flags="0">
           <incDir>
-            <pElem>usuario</pElem>
+            <pElem>usuario/include</pElem>
           </incDir>
         </cTool>
       </item>
       <item path="usuario/dormilon.c" ex="false" tool="0" flavor2="3">
         <cTool flags="0">
           <incDir>
-            <pElem>usuario</pElem>
+            <pElem>usuario/include</pElem>
           </incDir>
         </cTool>
       </item>
       <item path="usuario/excep_arit.c" ex="false" tool="0" flavor2="3">
         <cTool flags="0">
           <incDir>
-            <pElem>usuario</pElem>
+            <pElem>usuario/include</pElem>
           </incDir>
         </cTool>
       </item>
       <item path="usuario/excep_mem.c" ex="false" tool="0" flavor2="3">
         <cTool flags="0">
           <incDir>
-            <pElem>usuario</pElem>
+            <pElem>usuario/include</pElem>
           </incDir>
         </cTool>
       </item>
       <item path="usuario/init.c" ex="false" tool="0" flavor2="3">
         <cTool flags="0">
           <incDir>
-            <pElem>usuario</pElem>
+            <pElem>usuario/include</pElem>
           </incDir>
         </cTool>
       </item>
       <item path="usuario/lector.c" ex="false" tool="0" flavor2="3">
-        <cTool flags="0">
+        <cTool flags="2">
           <incDir>
             <pElem>usuario</pElem>
           </incDir>
         </cTool>
       </item>
       <item path="usuario/lib/serv.c" ex="false" tool="0" flavor2="3">
-        <cTool flags="0">
+        <cTool flags="1">
         </cTool>
       </item>
       <item path="usuario/mudo.c" ex="false" tool="0" flavor2="3">
         <cTool flags="0">
           <incDir>
-            <pElem>usuario</pElem>
+            <pElem>usuario/include</pElem>
           </incDir>
         </cTool>
       </item>
       <item path="usuario/mutex1.c" ex="false" tool="0" flavor2="3">
         <cTool flags="0">
           <incDir>
-            <pElem>usuario</pElem>
+            <pElem>usuario/include</pElem>
           </incDir>
         </cTool>
       </item>
       <item path="usuario/mutex2.c" ex="false" tool="0" flavor2="3">
-        <cTool flags="0">
+        <cTool flags="2">
           <incDir>
             <pElem>usuario</pElem>
           </incDir>
@@ -187,54 +466,54 @@
       <item path="usuario/prueba_RR1.c" ex="false" tool="0" flavor2="3">
         <cTool flags="0">
           <incDir>
-            <pElem>usuario</pElem>
+            <pElem>usuario/include</pElem>
           </incDir>
         </cTool>
       </item>
       <item path="usuario/prueba_RR2.c" ex="false" tool="0" flavor2="3">
         <cTool flags="0">
           <incDir>
-            <pElem>usuario</pElem>
+            <pElem>usuario/include</pElem>
           </incDir>
         </cTool>
       </item>
       <item path="usuario/prueba_dormir.c" ex="false" tool="0" flavor2="3">
         <cTool flags="0">
           <incDir>
-            <pElem>usuario</pElem>
+            <pElem>usuario/include</pElem>
           </incDir>
         </cTool>
       </item>
       <item path="usuario/prueba_mutex1.c" ex="false" tool="0" flavor2="3">
         <cTool flags="0">
           <incDir>
-            <pElem>usuario</pElem>
+            <pElem>usuario/include</pElem>
           </incDir>
         </cTool>
       </item>
       <item path="usuario/prueba_mutex2.c" ex="false" tool="0" flavor2="3">
         <cTool flags="0">
           <incDir>
-            <pElem>usuario</pElem>
+            <pElem>usuario/include</pElem>
           </incDir>
         </cTool>
       </item>
       <item path="usuario/prueba_term.c" ex="false" tool="0" flavor2="3">
         <cTool flags="0">
           <incDir>
-            <pElem>usuario</pElem>
+            <pElem>usuario/include</pElem>
           </incDir>
         </cTool>
       </item>
       <item path="usuario/simplon.c" ex="false" tool="0" flavor2="3">
         <cTool flags="0">
           <incDir>
-            <pElem>usuario</pElem>
+            <pElem>usuario/include</pElem>
           </incDir>
         </cTool>
       </item>
       <item path="usuario/yosoy.c" ex="false" tool="0" flavor2="3">
-        <cTool flags="0">
+        <cTool flags="2">
           <incDir>
             <pElem>usuario</pElem>
           </incDir>
